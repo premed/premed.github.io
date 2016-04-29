@@ -1,36 +1,56 @@
-/* GLOBAL STYLES
- *-------------------------------------------------- */
-nav {
-  background-color: 1px #337ab7;
-}
-
-/* Padding below the footer and lighter body text */
+/* ----------------------------------------
+ * FONTS
+ * ---------------------------------------- 
+ *     -Merriweather:
+ *       -Light: 300
+ *       -Normal: 400
+ *       -Normal (italic): 400
+ *       -Bold: 700
+ *       -Bold (italic): 700
+ *     -Josefin Slab:
+ *       -Normal: 400
+ *     -Hammersmith One:
+ *       -Normal: 400
+ * ----------------------------------------
+ *   */
+/* ----------------------------------------
+ * COLORS
+ * ----------------------------------------
+ */
+/* ----------------------------------------
+ * GLOBAL STYLES
+ * ----------------------------------------
+ */
 body {
+  color: #09172b;
+  background-color: #f5f7ef;
   padding-bottom: 40px;
-  color: #5a5a5a;
+}
+body ::-moz-selection {
+  color: #e5b952;
+  background: #284972;
+}
+body ::selection {
+  color: #e5b952;
+  background: #284972;
 }
 
-.carouselimg {
-  height: auto !important;
-  width: 100% !important;
+.btn {
+  color: #09172b;
+  background-color: #f5f7ef;
+  border: 1px solid #134e66;
+  -webkit-transition: background-color 250ms, color 300ms;
+  transition: background-color 250ms, color 300ms;
 }
-
-.navbar-nav li.active a {
-  border-radius: 80px;
-}
-
-.navbar-nav {
-  padding-right: 10px;
+.btn:hover {
+  background-color: #363636;
+  border: 1px solid #134e66;
+  color: #dea726;
 }
 
 *:focus {
   outline: none !important;
   border: none;
-}
-
-.projects {
-  font-size: 72px !important;
-  margin-bottom: 20px;
 }
 
 /* CUSTOMIZE THE NAVBAR
@@ -43,6 +63,18 @@ body {
   left: 0;
   z-index: 20;
 }
+.navbar-wrapper #brand {
+  font-family: "Hammersmith One";
+  font-size: 24px;
+  position: relative;
+  top: 5px;
+  color: #f5f7ef;
+  -webkit-transition: color 250ms ease-in-out;
+  transition: color 250ms ease-in-out;
+}
+.navbar-wrapper #brand:hover {
+  color: #27a0d1;
+}
 .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
@@ -51,14 +83,112 @@ body {
   padding-right: 15px;
   padding-left: 15px;
   padding: 10px;
+  background-color: #050c16 !important;
+  color: #f5f7ef;
 }
 .navbar-wrapper .navbar .container {
   width: auto;
 }
+.navbar-wrapper .navbar .navbar-nav {
+  padding-right: 10px;
+  font-family: "Merriweather";
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 100px;
+  padding-bottom: 5px;
+}
+.navbar-wrapper .navbar .navbar-nav li {
+  background-color: #050c16 !important;
+  border-bottom: 4px solid transparent;
+  -webkit-transition: color 250ms ease-in-out;
+  transition: color 250ms ease-in-out;
+}
+.navbar-wrapper .navbar .navbar-nav li::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  content: "";
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+.navbar-wrapper .navbar .navbar-nav li:hover::after, .navbar-wrapper .navbar .navbar-nav li:focus::after {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+.navbar-wrapper .navbar .navbar-nav .active {
+  border-bottom: 4px solid white;
+  -webkit-transition: border-bottom 250ms ease-in-out;
+  transition: border-bottom 250ms ease-in-out;
+}
+.navbar-wrapper .navbar .navbar-nav .active a {
+  background-color: transparent !important;
+}
+.navbar-wrapper .navbar-toggle {
+  border: none;
+}
+.navbar-wrapper .navbar-toggle:focus {
+  background-color: transparent;
+}
+.navbar-wrapper .navbar-toggle:hover {
+  background-color: transparent;
+}
 
-/* Flip around the padding for proper display in narrow viewports */
-/* CUSTOMIZE THE CAROUSEL
- *-------------------------------------------------- */
+#brand {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+}
+#brand:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  -webkit-transition: width 0s ease, background 0.5s ease;
+  transition: width 0s ease, background 0.5s ease;
+}
+#brand:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 16px;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #27a0d1;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+}
+#brand:hover:before {
+  width: 88%;
+  background: #27a0d1;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+  left: 16px;
+}
+#brand:hover:after {
+  width: 87%;
+  background: transparent;
+  -webkit-transition: all 0s ease;
+  transition: all 0s ease;
+}
+
+/* --------------------------------------------------
+ * CUSTOMIZE THE CAROUSEL
+ * --------------------------------------------------
+ */
 /* Carousel base class */
 .carousel {
   height: 500px;
@@ -73,34 +203,66 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel .item:first-child {
   height: 500px;
-  background-color: #777777;
+  background-color: #f5f7ef;
+}
+
+/* ----------------------------------
+ * Other Carousel Customizations
+ * ----------------------------------
+ */
+.carouselimg {
+  height: auto !important;
+  width: 100% !important;
+}
+
+.carousel-caption h1 {
+  font-family: "Merriweather";
+  font-weight: 400;
+}
+.carousel-caption p {
+  font-family: "Merriweather";
+  font-weight: 300;
+  font-size: 21px;
+}
+.carousel-caption p .btn {
+  font-family: "Hammersmith One";
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+  border: 3px solid #1b6f91;
+  background-color: #1b6f91;
+}
+.carousel-caption p .btn:hover {
+  background-color: transparent;
+  color: white;
+  border: 3px solid #1b6f91;
 }
 
 .firstPic {
   height: 500px;
-  background-color: #777777;
+  background-color: #09172b;
 }
 .firstPic img {
-  background: url(http://lorempixel.com/800/600/) no-repeat center;
+  background: url(https://raw.githack.com/premed/premed.github.io/master/images/IMG_0056.jpg) no-repeat center;
   background-size: 100% auto;
-  -webkit-filter: sepia(70%) hue-rotate(180deg) brightness(60%);
-          filter: sepia(70%) hue-rotate(180deg) brightness(60%);
+  -webkit-filter: sepia(90%) hue-rotate(220deg) brightness(50%);
+          filter: sepia(90%) hue-rotate(220deg) brightness(50%);
 }
 
 .secondPic {
   height: 500px;
-  background-color: #777777;
+  background-color: #09172b;
 }
 .secondPic img {
-  background: url(http://lorempixel.com/800/600/) no-repeat center;
+  background: url(https://raw.githack.com/premed/premed.github.io/master/images/remind%20logo.png) no-repeat center;
   background-size: 100% auto;
-  -webkit-filter: sepia(70%) hue-rotate(240deg) brightness(60%);
-          filter: sepia(70%) hue-rotate(240deg) brightness(60%);
+  -webkit-filter: brightness(35%);
+          filter: brightness(35%);
 }
 
 .thirdPic {
   height: 500px;
-  background-color: #777777;
+  background-color: #f5f7ef;
 }
 .thirdPic img {
   background: url(http://lorempixel.com/800/600/) no-repeat center;
@@ -124,9 +286,28 @@ body {
 /* MARKETING CONTENT
  *-------------------------------------------------- */
 /* Center align the text within the three columns below the carousel */
+.marketing {
+  font-family: "Merriweather";
+}
+.marketing p {
+  font-weight: 300;
+  font-size: 18px;
+}
 .marketing .col-md-4 {
   margin-bottom: 20px;
   text-align: center;
+}
+.marketing .col-md-4 .btn {
+  font-family: "Hammersmith One";
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+  border: 3px solid #284972;
+  background-color: transparent;
+}
+.marketing .col-md-4 .btn:hover {
+  background-color: #284972;
+  color: #f5f7ef;
 }
 .marketing h2 {
   font-weight: normal;
@@ -138,6 +319,11 @@ body {
 
 /* Featurettes
  *------------------------- */
+.projects {
+  font-size: 72px;
+  margin-bottom: 20px;
+}
+
 .featurette-divider {
   margin: 80px 0;
   /* Space out the Bootstrap <hr> more */
@@ -150,6 +336,114 @@ body {
   letter-spacing: -1px;
 }
 
+/* RESPONSIVE CSS
+ *-------------------------------------------------- */
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+    position: fixed;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 4px;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+@media(max-width: 768px) {
+  .navbar-wrapper {
+    top: 0px;
+  }
+
+  nav {
+    position: fixed !important;
+    width: 100%;
+    -webkit-transition: top 0.2s ease-in-out;
+    transition: top 0.2s ease-in-out;
+  }
+
+  .navigation-bar.is-hidden {
+    opacity: 0;
+    -webkit-transform: translate(0, -60px);
+            transform: translate(0, -60px);
+    -webkit-transition: background 0.3s, color 0.3s, opacity 0 0.3s, -webkit-transform 0.2s;
+    transition: background 0.3s, color 0.3s, opacity 0 0.3s, -webkit-transform 0.2s;
+    transition: transform 0.2s, background 0.3s, color 0.3s, opacity 0 0.3s;
+    transition: transform 0.2s, background 0.3s, color 0.3s, opacity 0 0.3s, -webkit-transform 0.2s;
+  }
+  .navigation-bar.is-visible {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    -webkit-transition: background 0.3s, color 0.3s, -webkit-transform 0.2s;
+    transition: background 0.3s, color 0.3s, -webkit-transform 0.2s;
+    transition: transform 0.2s, background 0.3s, color 0.3s;
+    transition: transform 0.2s, background 0.3s, color 0.3s, -webkit-transform 0.2s;
+  }
+}
+@media(max-width: 680px) {
+  .firstPic {
+    height: 500px;
+    background-color: #f5f7ef;
+  }
+  .firstPic img {
+    background: url(http://lorempixel.com/800/600/) no-repeat center;
+    background-size: auto 100%;
+    -webkit-filter: sepia(70%) hue-rotate(180deg) brightness(60%);
+            filter: sepia(70%) hue-rotate(180deg) brightness(60%);
+  }
+
+  .secondPic {
+    height: 500px;
+    background-color: #f5f7ef;
+  }
+  .secondPic img {
+    background: url(http://lorempixel.com/800/600/) no-repeat center;
+    background-size: auto 100%;
+    -webkit-filter: sepia(70%) hue-rotate(240deg) brightness(60%);
+            filter: sepia(70%) hue-rotate(240deg) brightness(60%);
+  }
+
+  .thirdPic {
+    height: 500px;
+    background-color: #f5f7ef;
+  }
+  .thirdPic img {
+    background: url(http://lorempixel.com/800/600/) no-repeat center;
+    background-size: auto 100%;
+    -webkit-filter: sepia(70%) hue-rotate(300deg) brightness(60%);
+            filter: sepia(70%) hue-rotate(300deg) brightness(60%);
+  }
+
+  .carousel > .item > img {
+    opacity: 0;
+  }
+}
+/* ------------------------------------
+ * ANIMATIONS
+ * ------------------------------------
+ */
 @-webkit-keyframes tiltup {
   from {
     -webkit-transform: rotate(0deg);
@@ -160,7 +454,6 @@ body {
             transform: rotate(45deg);
   }
 }
-
 @keyframes tiltup {
   from {
     -webkit-transform: rotate(0deg);
@@ -325,83 +618,4 @@ body {
           animation-name: fadein;
   -webkit-animation-duration: 600ms;
           animation-duration: 600ms;
-}
-
-/* RESPONSIVE CSS
- *-------------------------------------------------- */
-@media (min-width: 768px) {
-  /* Navbar positioning foo */
-  .navbar-wrapper {
-    margin-top: 20px;
-    position: fixed;
-  }
-  .navbar-wrapper .container {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  .navbar-wrapper .navbar {
-    padding-right: 0;
-    padding-left: 0;
-    border-radius: 4px;
-  }
-
-  /* The navbar becomes detached from the top, so we round the corners */
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: 1.4;
-  }
-
-  .featurette-heading {
-    font-size: 50px;
-  }
-}
-@media (min-width: 992px) {
-  .featurette-heading {
-    margin-top: 120px;
-  }
-}
-@media(max-width: 768px) {
-  .navbar-wrapper {
-    top: 0px;
-  }
-}
-@media(max-width: 660px) {
-  .firstPic {
-    height: 500px;
-    background-color: #777777;
-  }
-  .firstPic img {
-    background: url(http://lorempixel.com/800/600/) no-repeat center;
-    background-size: auto 100%;
-    -webkit-filter: sepia(70%) hue-rotate(180deg) brightness(60%);
-            filter: sepia(70%) hue-rotate(180deg) brightness(60%);
-  }
-
-  .secondPic {
-    height: 500px;
-    background-color: #777777;
-  }
-  .secondPic img {
-    background: url(http://lorempixel.com/800/600/) no-repeat center;
-    background-size: auto 100%;
-    -webkit-filter: sepia(70%) hue-rotate(240deg) brightness(60%);
-            filter: sepia(70%) hue-rotate(240deg) brightness(60%);
-  }
-
-  .thirdPic {
-    height: 500px;
-    background-color: #777777;
-  }
-  .thirdPic img {
-    background: url(http://lorempixel.com/800/600/) no-repeat center;
-    background-size: auto 100%;
-    -webkit-filter: sepia(70%) hue-rotate(300deg) brightness(60%);
-            filter: sepia(70%) hue-rotate(300deg) brightness(60%);
-  }
-
-  .carousel > .item > img {
-    opacity: 0;
-  }
 }
