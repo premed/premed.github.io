@@ -1,7 +1,7 @@
 /*
   ----------------------------------------
-  FONTS
-  ---------------------------------------- 
+  FONTS POOP
+  ----------------------------------------
       -Merriweather:
         -Light: 300
         -Normal: 400
@@ -37,20 +37,20 @@ $brand-primary: #337ab7
 
 
 
-/* 
+/*
   ----------------------------------------
   GLOBAL STYLES
   ----------------------------------------
   */
 
 body
-  color: $black 
+  color: $black
   background-color: $white
   padding-bottom: 40px
-  ::selection 
-    color: $orange 
+  ::selection
+    color: $orange
     background: $navy
-  
+
 .btn
   color: $black
   background-color: $white
@@ -61,14 +61,14 @@ body
     border: 1px solid darken( $light-blue, 10%)
     color: darken( $orange, 10%)
 
-*:focus 
+*:focus
   outline: none !important
   border: none
 
-    
-  
 
-      
+
+
+
 
 
 
@@ -78,7 +78,7 @@ body
 
 /* Special class on .container surrounding .navbar, used for positioning it into place.
 
-  
+
 .navbar-wrapper
   #brand
     font-family: 'Hammersmith One'
@@ -140,11 +140,11 @@ body
           background-color: rgba(0,0,0,0) !important
   .navbar-toggle
     border: none
-    &:focus 
+    &:focus
       background-color: rgba(0,0,0,0)
     &:hover
       background-color: rgba(0,0,0,0)
-  
+
 #brand
   display: inline-block
   position: relative
@@ -169,7 +169,7 @@ body
     width: 0
     background: lighten($light-blue, 15%)
     transition: width .5s ease
-    
+
   &:hover
     &:before
       width: 88%
@@ -177,7 +177,7 @@ body
       transition: width .5s ease
       left: 16px
     &:after
-      
+
       width: 87%
       background: transparent
       transition: all 0s ease
@@ -185,7 +185,7 @@ body
 
 
 
-/* 
+/*
   --------------------------------------------------
   CUSTOMIZE THE CAROUSEL
   --------------------------------------------------
@@ -205,9 +205,9 @@ body
 .carousel .item:first-child
   height: 500px
   background-color: $white
-  
-  
-  
+
+
+
 /*
   ----------------------------------
   Other Carousel Customizations
@@ -216,7 +216,7 @@ body
 .carouselimg
   height: auto !important
   width: 100% !important
-  
+
 .carousel-caption
   h1
     font-family: 'Merriweather'
@@ -232,34 +232,34 @@ body
       font-weight: 400
       border: 3px solid $light-blue
       background-color: $light-blue
-      &:hover 
+      &:hover
         background-color: rgba(0,0,0,0)
         color: white
         border: 3px solid $light-blue
-  
-.firstPic 
+
+.firstPic
   height: 500px
   background-color: $black
   img
     background: url(https://raw.githack.com/premed/premed.github.io/master/images/IMG_0056.jpg) no-repeat center
     background-size: 100% auto
     filter: sepia(90%) hue-rotate(220deg) brightness(50%)
-  
-.secondPic 
+
+.secondPic
   height: 500px
   background-color: $black
   img
     background: url(https://raw.githack.com/premed/premed.github.io/master/images/remind%20logo.png) no-repeat center
     background-size: 100% auto
     filter: brightness(35%)
-  
-.thirdPic 
+
+.thirdPic
   height: 500px
   background-color: $white
   img
     background: url(http://lorempixel.com/800/600/) no-repeat center
     background-size: 100% auto
-    filter: sepia(70%) hue-rotate(300deg) brightness(60%) 
+    filter: sepia(70%) hue-rotate(300deg) brightness(60%)
 
 .carousel-inner > .item > img
   position: absolute
@@ -271,10 +271,10 @@ body
 .thirdPic h1 span
   text-shadow: 0px 0px 15px #FFF
 
-  
-  
-  
-  
+
+
+
+
 
 /* MARKETING CONTENT
  *--------------------------------------------------
@@ -293,10 +293,10 @@ body
       text-transform: uppercase
       font-size: 20px
       font-weight: 400
-     
+
       border: 3px solid $navy
       background-color: rgba(0,0,0,0)
-      &:hover 
+      &:hover
         background-color: $navy
         color: $white
   h2
@@ -304,16 +304,16 @@ body
   .col-md-4 p
     margin-right: 10px
     margin-left: 10px
-    
-    
-    
+
+
+
 
 /* Featurettes
  *-------------------------
 .projects
   font-size: 72px
   margin-bottom: 20px
-  
+
 .featurette-divider
   margin: 80px 0
   /* Space out the Bootstrap <hr> more
@@ -325,14 +325,14 @@ body
   line-height: 1
   letter-spacing: -1px
 
-  
-  
-  
-  
 
-  
-  
-  
+
+
+
+
+
+
+
 /* RESPONSIVE CSS
  *--------------------------------------------------
 
@@ -348,7 +348,7 @@ body
       padding-right: 0
       padding-left: 0
       border-radius: 4px
-      
+
   /* The navbar becomes detached from the top, so we round the corners
   /* Bump up size of carousel content
   .carousel-caption p
@@ -361,7 +361,7 @@ body
 @media (min-width: 992px)
   .featurette-heading
     margin-top: 120px
-    
+
 @media(max-width: 768px)
   .navbar-wrapper
     top: 0px
@@ -399,34 +399,34 @@ body
     img
       background: url(http://lorempixel.com/800/600/) no-repeat center
       background-size: auto 100%
-      filter: sepia(70%) hue-rotate(300deg) brightness(60%) 
-    
-  .carousel > .item > img 
+      filter: sepia(70%) hue-rotate(300deg) brightness(60%)
+
+  .carousel > .item > img
     opacity: 0
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
 /*
   ------------------------------------
   ANIMATIONS
   ------------------------------------
   */
-  
+
 @keyframes tiltup
   from
     transform: rotate(0deg)
   to
     transform: rotate(45deg)
-    
+
 @keyframes tiltdown
   from
     transform: rotate(45deg)
   to
     transform: rotate(0deg)
-    
+
 @keyframes twistleft
   from
     transform: rotate(0deg)
@@ -434,7 +434,7 @@ body
     top: -5px
     transform: rotate(-45deg)
     position: relative
-    
+
 @keyframes twistright
   from
     top: -5px
@@ -442,29 +442,29 @@ body
     position: relative
   to
     transform: rotate(0deg)
-    
+
 @keyframes fadeaway
   from
     opacity: 1
   to
     opacity: 0
-    
+
 @keyframes fadein
   from
     opacity: 0
   to
     opacity: 1
-    
+
 .tiltup
   transform: rotate(45deg)
   animation-name: tiltup
-  animation-duration: 600ms 
-  
+  animation-duration: 600ms
+
 .tiltdown
   transform: rotate(0deg)
   animation-name: tiltdown
-  animation-duration: 600ms 
-  
+  animation-duration: 600ms
+
 .twistleft
   top: -5px
   transform: rotate(-45deg)
@@ -483,21 +483,8 @@ body
   opacity: 0
   animation-name: fadeaway
   animation-duration: 500ms
-  
+
 .fadein
   opacity: 1
   animation-name: fadein
   animation-duration: 600ms
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
