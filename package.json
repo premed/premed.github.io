@@ -1,0 +1,27 @@
+{
+  "name": "xavier",
+  "version": "1.0.0",
+  "description": "premed",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/premed/premed.github.io.git"
+  },
+  "keywords": [
+    "premed"
+  ],
+  "author": "Xavier Ruiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/premed/premed.github.io/issues"
+  },
+  "homepage": "https://github.com/premed/premed.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-uglify": "^1.5.3"
+  }
+}
